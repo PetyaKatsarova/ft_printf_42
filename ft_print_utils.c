@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 17:26:25 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/11/23 18:00:40 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/11/27 14:14:04 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,37 @@ int  ft_printchar(int    c)
     return (1);
 }
 
-int ft_printstr(va_list args)
+int ft_printperc(void)
 {
-    int     str_len;
-    char    *str;
+    write(1, "%", 1);
+    return (1);
+}
 
-    str = va_arg(args, char *);
-    ft_putstr_fd(str, 1);
-    return (ft_strlen(str));
+int ft_printstr(char *str)
+{
+    int i;
+
+    i = 0;
+    if (str == NULL)
+        return (0);
+    while (str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+    return (i);
+}
+
+int	ft_num_len(unsigned int n)
+{
+	int i;
+
+	i = 0;
+	while (n != 0)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
 }
 

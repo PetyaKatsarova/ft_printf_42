@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:38:41 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/11/23 18:26:14 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/11/27 15:46:17 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-int         ft_printchar(int    c);
-int         ft_printstr(va_list args);
-int         ft_print_num(va_list args);
-int         ft_printf(const char *format, ...);
+int             ft_printchar(int    c);
+int             ft_printstr(char *str);
+int             ft_printperc(void);
+int             ft_print_num(int n);
+static char	    *ft_uitoa(unsigned int n);
+int             ft_print_unsigned_int(unsigned int n);
+unsigned int    ft_print_hex(unsigned int n, const char format);
+int             ft_printf(const char *format, ...);
 int main(void);
 
 #endif
