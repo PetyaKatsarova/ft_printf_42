@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/27 10:43:26 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/11/30 13:57:29 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/11/30 14:46:40 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,10 @@ int	ft_print_unsigned_int(unsigned int n)
 	len = 0;
 	if (n == 0)
 		return (write(1, "0", 1));
-	else
-	{
-		num = ft_uitoa(n);
-		if (num == NULL)
-			return (-1);
-		len = ft_printstr(num);
-		free(num);
-	}	
+	num = ft_uitoa(n);
+	if (num == NULL)
+		return (-1);
+	len = ft_printstr(num);
+	free(num);
 	return (len);
 }

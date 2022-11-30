@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:39:14 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/11/30 11:39:35 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/11/30 19:29:13 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,43 @@ static int	ft_format(va_list args, const char c)
 	int	str_len;
 
 	str_len = 0;
-	if (c == 'c' && (str_len != -1))
+	if (c == 'c' && (str_len >= 0))
 		str_len += ft_printchar(va_arg(args, int));
-	else if (c == '%' && (str_len != -1))
+	else if (c == '%' && (str_len >= 0))
 		str_len += ft_printperc();
-	else if (c == 's' && (str_len != -1))
+	else if (c == 's' && (str_len >= 0))
 		str_len += ft_printstr(va_arg(args, char *));
-	else if ((c == 'i' || c == 'd') && (str_len != -1))
+	else if ((c == 'i' || c == 'd') && (str_len >= 0))
 		str_len += ft_print_num(va_arg(args, int));
-	else if (c == 'u' && (str_len != -1))
+	else if (c == 'u' && (str_len >= 0))
 		str_len += ft_print_unsigned_int(va_arg(args, unsigned int));
-	else if ((c == 'x' || c == 'X') && (str_len != -1))
+	else if ((c == 'x' || c == 'X') && (str_len >= 0))
 		str_len += ft_print_hex(va_arg(args, int), c);
-	else if (c == 'p' && (str_len != -1))
+	else if (c == 'p' && (str_len >= 0))
 		str_len += ft_print_ptr(va_arg(args, unsigned long));
 	return (str_len);
 }
+
+static int shorter(va_list args, const char c, int	str_len)
+{
+	int	test;
+
+	test = 0;
+	if (str_len >= 0)
+		test = ft_format(args, c);
+	if (test == -1)
+		return (-1);
+	else
+		str_len += test;
+	return (str_len);
+}
+
 
 int	ft_printf(const char *format, ...)
 {
 	int		str_len;
 	int		i;
+	int		test;
 	va_list	args;
 	
 	va_start (args, format);
@@ -53,12 +69,14 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (str_len != -1)
-				str_len += ft_format(args, format[++i]);
+			test = shorter(args, format[++i], str_len);
+			if (test == -1)
+				return (-1);
+			str_len = test;
 		}
 		else
 		{
-			if (str_len != -1)
+			if (str_len >= 0)
 				str_len += write(1, &format[i], 1);
 		}
 		i++;

@@ -61,10 +61,17 @@ int main(void)
 //    printf("orig: char: %c, %c, %c\n", "abs", -12, 0xabc);
 // ft_printf("my v: char: %c, %c, %c\n", "abs", -12, 0xabc);
 
-	int i = 0;
-	i = ft_printf("%p\n", "");
-	printf("%d\n", i);
-	i = printf("%p\n", "");
-	printf("%d\n", i);
-	   return (0);
+	//    printf("%d%dd%d\n", 1, 2, -3);
+	// ft_printf("%d%dd%d\n", 1, 2, -3);
+
+	// int i = printf("dgs%dxx\n", 10);
+	// int j = ft_printf("dgs%dxx\n", 10);
+	// printf("%d, %d\n", i, j);
+	printf("%x\n", -10);
+	ft_printf("%x\n", -10);
+	int i = printf("%x\n", -10);
+	int j = ft_printf("%x\n", -10);
+	printf("%i, %i\n", i, j);
+
+	return (0);
 }
