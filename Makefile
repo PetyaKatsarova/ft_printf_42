@@ -6,7 +6,7 @@
 #    By: pkatsaro <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/11/08 16:00:53 by pkatsaro      #+#    #+#                  #
-#    Updated: 2022/11/27 15:48:52 by pkatsaro      ########   odam.nl          #
+#    Updated: 2022/11/29 13:55:59 by pkatsaro      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SOURCES = ft_printf.c \
 		ft_print_num.c \
 		ft_print_unsigned_int.c \
 		ft_print_hex.c \
+		ft_print_ptr.c \
 		
 OBJECTS = $(SOURCES:.c=.o)
 
