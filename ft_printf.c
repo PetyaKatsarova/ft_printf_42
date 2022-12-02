@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:39:14 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/11/30 19:29:13 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/02 12:37:28 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_format(va_list args, const char c)
 	return (str_len);
 }
 
-static int shorter(va_list args, const char c, int	str_len)
+static int	shorter(va_list args, const char c, int str_len)
 {
 	int	test;
 
@@ -54,25 +54,22 @@ static int shorter(va_list args, const char c, int	str_len)
 	return (str_len);
 }
 
-
 int	ft_printf(const char *format, ...)
 {
 	int		str_len;
 	int		i;
-	int		test;
 	va_list	args;
-	
-	va_start (args, format);
+
+	va_start(args, format);
 	str_len = 0;
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			test = shorter(args, format[++i], str_len);
-			if (test == -1)
+			str_len = shorter(args, format[++i], str_len);
+			if (str_len == -1)
 				return (-1);
-			str_len = test;
 		}
 		else
 		{

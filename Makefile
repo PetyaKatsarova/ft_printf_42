@@ -6,7 +6,7 @@
 #    By: pkatsaro <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/11/08 16:00:53 by pkatsaro      #+#    #+#                  #
-#    Updated: 2022/11/29 13:55:59 by pkatsaro      ########   odam.nl          #
+#    Updated: 2022/12/02 11:54:32 by pkatsaro      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 %.o: %.c
 	$(CC) -c $< -o $@ -I $(LIBFT_PATH)
-# add $(CFLAGS) after CC
+# add $(CFLAGS) after CC ad remove for testing
 
 all:	$(LIBFT) $(NAME)
 

@@ -18,10 +18,11 @@ int main(void)
    // printf("origi func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 33.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
    // ft_printf("my func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 3.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
 
-   // printf("x && X\n");
-   // printf("orig func:\nhex x%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
-   // ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
-//    printf("str is null: %s\n", "");
+   printf("x && X\n");
+   int foo = printf("orig func:\nhex x%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
+   int foo1 = ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
+   printf("%i, %i\n", foo, foo1);
+   printf("str is null: %s\n", "");
 
 //    int x = 50;
 //    int *ptr = &x;
