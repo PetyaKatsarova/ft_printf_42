@@ -19,10 +19,10 @@ int main(void)
    // ft_printf("my func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 3.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
 
    printf("x && X\n");
-   int foo = printf("orig func:\nhex x%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
+   	   int foo = printf("origin:\nhex x%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
    int foo1 = ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
-   printf("%i, %i\n", foo, foo1);
-   printf("str is null: %s\n", "");
+   printf("orig: %i, me: %i\n", foo, foo1);
+   //printf("str is null: %s\n", "");
 
 //    int x = 50;
 //    int *ptr = &x;
@@ -68,11 +68,14 @@ int main(void)
 	// int i = printf("dgs%dxx\n", 10);
 	// int j = ft_printf("dgs%dxx\n", 10);
 	// printf("%d, %d\n", i, j);
-	printf("%x\n", -10);
-	ft_printf("%x\n", -10);
-	int i = printf("%x\n", -10);
-	int j = ft_printf("%x\n", -10);
-	printf("%i, %i\n", i, j);
+	// printf("%x\n", -10);
+	// ft_printf("%x\n", -10);
+	// int i = printf("%x\n", -10);
+	// int j = ft_printf("%x\n", -10);
+	// printf("%i, %i\n", i, j);
 
+	printf("ends with \n%");
+	printf("*-*-*-*-*-*\n");
+	ft_printf("ends with \n%");
 	return (0);
 }

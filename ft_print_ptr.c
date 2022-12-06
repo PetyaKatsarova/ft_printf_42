@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/27 16:30:36 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/02 11:26:06 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/02 18:23:20 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,12 @@ static int	ft_plen(uintptr_t n)
 static	void	ft_to_ptr(uintptr_t n)
 {
 	if (n >= 16)
-	{
 		ft_to_ptr(n / 16);
-		ft_to_ptr(n % 16);
-	}
+	n = n % 16;
+	if (n <= 9)
+		ft_putchar_fd((n + '0'), 1);
 	else
-	{
-		if (n <= 9)
-			ft_putchar_fd((n + '0'), 1);
-		else
-			ft_putchar_fd((n - 10 + 'a'), 1);
-	}
+		ft_putchar_fd((n - 10 + 'a'), 1);
 }
 
 int	ft_print_ptr(unsigned long p)

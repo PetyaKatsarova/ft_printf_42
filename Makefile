@@ -6,7 +6,7 @@
 #    By: pkatsaro <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/11/08 16:00:53 by pkatsaro      #+#    #+#                  #
-#    Updated: 2022/12/02 11:54:32 by pkatsaro      ########   odam.nl          #
+#    Updated: 2022/12/02 18:12:19 by pkatsaro      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 LIB = ar rcs
 
@@ -29,7 +29,7 @@ SOURCES = ft_printf.c \
 OBJECTS = $(SOURCES:.c=.o)
 
 %.o: %.c
-	$(CC) -c $< -o $@ -I $(LIBFT_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(LIBFT_PATH)
 # add $(CFLAGS) after CC ad remove for testing
 
 all:	$(LIBFT) $(NAME)
