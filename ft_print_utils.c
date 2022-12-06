@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 17:26:25 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/02 18:29:26 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/06 11:18:34 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_printchar(int c)
 {
-	return (write(1, &c, 1));
+	return (write(1, &c, sizeof(char)));
 }
 
 int	ft_printperc(void)

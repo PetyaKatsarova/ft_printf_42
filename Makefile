@@ -6,7 +6,7 @@
 #    By: pkatsaro <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/11/08 16:00:53 by pkatsaro      #+#    #+#                  #
-#    Updated: 2022/12/02 18:12:19 by pkatsaro      ########   odam.nl          #
+#    Updated: 2022/12/06 10:55:15 by pkatsaro      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,5 +55,5 @@ re:	fclean all
 
 test: all
 #	$(CC) $(CFLAGS) main.c -L. -lftprintf && ./a.out
-	$(CC)  main.c $(NAME) && ./a.out
+	$(CC)  -g -fsanitize=address main.c $(NAME) && ./a.out
 # add $(CFLAGS) after CC

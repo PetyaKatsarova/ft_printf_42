@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:39:14 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/02 18:38:22 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/06 12:13:53 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,22 @@ static int	ft_format(va_list args, const char c)
 	int	str_len;
 
 	str_len = 0;
-	if (c == 'c')
+	if (c == 'c' && (str_len >= 0))
 		str_len += ft_printchar(va_arg(args, int));
-	else if (c == '%')
+	else if (c == '%' && (str_len >= 0))
 		str_len += ft_printperc();
-	else if (c == 's')
+	else if (c == 's' && (str_len >= 0))
 		str_len += ft_printstr(va_arg(args, char *));
-	else if ((c == 'i' || c == 'd'))
+	else if ((c == 'i' || c == 'd') && (str_len >= 0))
 		str_len += ft_print_num(va_arg(args, int));
-	else if (c == 'u')
+	else if (c == 'u' && (str_len >= 0))
 		str_len += ft_print_unsigned_int(va_arg(args, unsigned int));
-	else if ((c == 'x' || c == 'X'))
-		str_len += ft_print_hex(va_arg(args, unsigned int), c);
-	else if (c == 'p')
+	else if ((c == 'x' || c == 'X') && (str_len >= 0))
+		str_len += ft_print_hex(va_arg(args, int), c);
+	else if (c == 'p' && (str_len >= 0))
 		str_len += ft_print_ptr(va_arg(args, unsigned long));
+	else
+		str_len += write(1, "0", 1);
 	return (str_len);
 }
 
@@ -65,9 +67,9 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[++i])
 		{
-			str_len = shorter(args, format[++i], str_len);
+			str_len = shorter(args, format[i], str_len);
 			if (str_len == -1)
 				return (-1);
 		}

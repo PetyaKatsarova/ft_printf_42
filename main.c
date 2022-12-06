@@ -1,4 +1,3 @@
-
 #include "ft_printf.h"
 #include <stdio.h>
 
@@ -18,18 +17,10 @@ int main(void)
    // printf("origi func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 33.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
    // ft_printf("my func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 3.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
 
-   printf("x && X\n");
-   	   int foo = printf("origin:\nhex x%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
-   int foo1 = ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 17250131, 836165877, -2);
-   printf("orig: %i, me: %i\n", foo, foo1);
-   //printf("str is null: %s\n", "");
+//    printf("x && X\n");
+//    printf("orig func:\nhex x%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
+//    ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
 
-//    int x = 50;
-//    int *ptr = &x;
-//    char	str[12] = "Hello World!";
-//    char	*str_ptr = &str;
-//    printf("orig\n: The address is: %p, the value is %d .  ----- val: %s, address: %p\n", ptr, *ptr, str, str_ptr);
-//    ft_printf("mine\n: The address is: %p, the value is %d. ----- val: %s, address: %p\n", ptr, *ptr, str, str_ptr);
 
    // int n = 399;
    // int y = 0xABCDEF;
@@ -56,26 +47,11 @@ int main(void)
    //  printf ("%#8x - no padding is added with #.\n", y);
    //  printf ("%#8X - no padding is added with #.\n", y);
    //  printf ("%#08X - padding is added with 0, but don't add 0X.\n", 0);
+    int a = printf("%gTest\n");
+    int b = ft_printf("%gTest\n");
+	printf("%i, %i\n", a, b);
 
-   // ****** TESTING HOW TO RETURN -1 IF ERROR....
-//    printf("%d\n",sizeof(char));
-//    printf("orig: char: %c, %c, %c\n", "abs", -12, 0xabc);
-// ft_printf("my v: char: %c, %c, %c\n", "abs", -12, 0xabc);
+	printf("%i, %i\n", a, b);
 
-	//    printf("%d%dd%d\n", 1, 2, -3);
-	// ft_printf("%d%dd%d\n", 1, 2, -3);
-
-	// int i = printf("dgs%dxx\n", 10);
-	// int j = ft_printf("dgs%dxx\n", 10);
-	// printf("%d, %d\n", i, j);
-	// printf("%x\n", -10);
-	// ft_printf("%x\n", -10);
-	// int i = printf("%x\n", -10);
-	// int j = ft_printf("%x\n", -10);
-	// printf("%i, %i\n", i, j);
-
-	printf("ends with \n%");
-	printf("*-*-*-*-*-*\n");
-	ft_printf("ends with \n%");
-	return (0);
+   return (0);
 }
