@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:39:14 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/06 16:39:52 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/06 16:48:37 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	ft_printf(const char *format, ...)
 					return (-1);
 			}
 		}
-		else if (format[i] != '%' && str_len >= 0)
+		else if (str_len >= 0)
 			str_len += write(1, &format[i], 1);
 		i++;
 	}
