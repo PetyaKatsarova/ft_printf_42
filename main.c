@@ -17,6 +17,7 @@ int main(void)
 //    printf("origi func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 33.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
 //    ft_printf("my func:\n$ max_num: %u, err: +1: u%%: %u, -5: %u, 3.3: %u\n%", 4294967295, 4294967296, -5, 33.3);
 
+
 //    printf("x && X\n");
 //    printf("orig func:\nhex x%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
 //    ft_printf("my fun:\nhex X%%: %x, %x, %X, %X\n", 123, 0, 0xABC, -2);
@@ -26,16 +27,48 @@ int main(void)
 //     printf ("%X hexadecimal with upper case letters.\n", n);
 //     printf ("%x hexadecimal with lower case letters.\n", n);
 
-	int a = printf("%");
-    int b = ft_printf("%");
-	printf("\n str_lens: %d, %d\n", a, b);
 
-	int c = printf("real: %\n");
-    int d = ft_printf("your: %\n");
-	printf("\n str_lens: %d, %d\n", c, d);
+	// int a = printf("%");
+    // int b = ft_printf("%");
+	// printf("\n str_lens: %d, %d\n", a, b);
 
-	int e = printf("real:TE%TT\n");
-    int f = ft_printf("your:TE%TT\n");
-	printf("\n str_lens: %d, %d\n", e, f);
+	// int c = printf("real: %\n");
+    // int d = ft_printf("your: %\n");
+	// printf("\n str_lens: %d, %d\n", c, d);
+	// char *s = "hello";
+	// int e = printf("real:%TE%c\nT%sbye\n", s);
+    // int f = ft_printf("your:%TE%c\nT%sbye\n", s);
+	// printf("orig: %i, test: %i\n", e, f);
+	
+	// int bla = ft_printf("test % %i%%%%-\n",-7);
+	// int wtf = printf("test % %i%%%%-\n",-7);
+	// printf("%i, %i\n", bla, wtf);
+	//printf("original: %T %s %\n", -5);
+
+// shows DIFFERENT STR LEN
+	// char *s = "hello";
+	// int e = printf("real:%TE%c\nT%sbye%i\n", s);
+    // int f = ft_printf("your:%TE%c\nT%sbye%i\n", s);
+	// printf("orig: %i, test: %i\n", e, f);
+	// char *s = "hello";
+	// int e = printf("real:%TE%c, %s\n\n", 'c', "gblkbjngkjjhrt");
+    // int f = ft_printf("your:%TE%c, %s\n\n", 'c', "gblkbjngkjjhrt");
+	// printf("orig: %i, test: %i\n", e, f);
+	// int b = printf("%%%\n");
+	// int a = ft_printf("%%%\n");
+	// printf("%d, %d\n", a, b);
+
+	char *s = "hello";
+	// int e = printf("real:%%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+    // int f = ft_printf("your:%%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+	// printf("orig: %i, test: %i\n", e, f);
+	// int b = printf("%%%\n");
+	// int a = ft_printf("%%%\n");
+	// printf("%d, %d\n", a, b);
+
+	int e = printf("real:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+    int f = ft_printf("your:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+	printf("orig: %i, test: %i\n", e, f);
+
    return (0);
 }
