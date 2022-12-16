@@ -74,9 +74,55 @@ int main(void)
     // int f = ft_printf("your:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
 	// printf("orig: %i, test: %i\n", e, f);
 
-	int e = printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
-    int f = ft_printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
-	printf("orig: %i, test: %i\n", e, f);
+	// int e = printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
+    // int f = ft_printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
+	// printf("orig: %i, test: %i\n", e, f);
+
+
+
+		// int x, y;
+	// x = ft_printf("Hello!\n");
+	// y = printf("Hello!\n");
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%d %d %d\n", 0, -1, -2147483648);
+	// y = printf("%d %d %d\n", 0, -1, -2147483648);
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%s %% %s %%\n", NULL, "");
+	// y = printf("%s %% %s %%\n", NULL, "");
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%x %% %x %X\n", -16, 0xff, 0x1);
+	// y = printf("%x %% %x %X\n", -16, 0xff, 0x1);
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%c%c%c%%%c%c\n", 'h', 'e', 'l', 'l', 'o');
+	// y = printf("%c%c%c%%%c%c\n", 'h', 'e', 'l', 'l', 'o');
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%pp%p%%ppp\n", 0x0, &ft_printf);
+	// y = printf("%pp%p%%ppp\n", 0x0, &ft_printf);
+	// if (x!=y)
+	// 	printf("ERROR\n");
+	// x = ft_printf("%i %u %i %u\n", 0x10, -1, 2147483648, 42);
+	// y = printf("%i %u %i %u\n", 0x10, -1, 2147483648, 42);
+	// if (x!=y)
+	// 	printf("ERROR\n");
+
+//   int printed_chars = 0;
+//   int my_printed_chars = 0;
+//   printed_chars =       printf("printing non-existing format specifier: %l with printf\n");
+//   my_printed_chars = ft_printf("printing non-existing format specifier: %l with printf\n");
+//   printf("\n(number of printed chars with system printf: %i)\n", printed_chars);
+//   printf("(number of printed chars with my ft_printf:  %d)\n", my_printed_chars);
+
+	int a = 0;
+  int my_a = 0;
+  a =       printf("printing non-existing format specifier: %T \n\0 with printf\n");
+  my_a = ft_printf("printing non-existing format specifier: %T \n\0 with printf\n");
+  printf("\n(number of printed chars with system printf: %i)\n", a);
+  printf("(number of printed chars with my ft_printf:  %d)\n", my_a);
 
    return (0);
 }

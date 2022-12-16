@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 15:39:14 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/16 12:30:35 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/16 16:54:55 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ static int	ft_format(va_list args, const char c)
 		str_len += ft_print_hex(va_arg(args, int), c);
 	else if (c == 'p')
 		str_len += ft_print_ptr(va_arg(args, unsigned long));
-	else
+	else if (c != ' ')
 		str_len += write(1, &c, 1);
+	
 	return (str_len);
 }
 
@@ -69,11 +70,10 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[++i])
+			if (format[i + 1])
 			{
-				str_len = shorter(args, format[i], str_len);
-				if (str_len == -1)
-					return (-1);
+				str_len = shorter(args, format[i + 1], str_len);
+				i++;
 			}
 		}
 		else if (str_len >= 0)

@@ -6,7 +6,7 @@
 /*   By: pkatsaro <pkatsaro@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 17:26:25 by pkatsaro      #+#    #+#                 */
-/*   Updated: 2022/12/16 11:02:06 by pkatsaro      ########   odam.nl         */
+/*   Updated: 2022/12/16 12:35:58 by pkatsaro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ int	ft_printstr(char *str)
 			return (-1);
 		return (6);
 	}
-	// while (str[i])
-	// {
-	// 	if (write(1, &str[i], 1) == -1)
-	// 		return (-1);
-	// 	i++;
-	// }
 	else
 	{
 		i = ft_strlen(str);
