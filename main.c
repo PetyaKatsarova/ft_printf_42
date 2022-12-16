@@ -58,7 +58,7 @@ int main(void)
 	// int a = ft_printf("%%%\n");
 	// printf("%d, %d\n", a, b);
 
-	char *s = "hello";
+	//char *s = "hello";
 	// int e = printf("real:%%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
     // int f = ft_printf("your:%%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
 	// printf("orig: %i, test: %i\n", e, f);
@@ -66,8 +66,16 @@ int main(void)
 	// int a = ft_printf("%%%\n");
 	// printf("%d, %d\n", a, b);
 
-	int e = printf("real:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
-    int f = ft_printf("your:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+	// int one = printf("hi\n");
+	// int two = ft_printf("hi\n");
+	// printf("%i, %i\n", one, two);
+
+	// int e = printf("real:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+    // int f = ft_printf("your:%iTE%%c, %s%s\n\n", 'c', "gblkbjngkjjhrt", s);
+	// printf("orig: %i, test: %i\n", e, f);
+
+	int e = printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
+    int f = ft_printf("%c\0, %s\n", 'c', "gblkbjngkjjhrt");
 	printf("orig: %i, test: %i\n", e, f);
 
    return (0);
